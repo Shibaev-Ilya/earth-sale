@@ -1,0 +1,282 @@
+@import "main-bx";
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: $font_base;
+    font-size: clamp(4px, 0.520835vw, 10px);
+    font-style: normal;
+    font-weight: normal;
+    -webkit-animation: bugfix infinite 1s;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1.8rem;
+    margin: 0;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-animation: bugfix infinite 1s;
+    line-height: 1.2;
+    padding: 0;
+    color: $default-font-color;
+    background-color: #FFFFFF;
+}
+
+input, textarea {
+    -webkit-animation: bugfix infinite 1s;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: unset;
+    &::selection {
+        color: #fff;
+        background-color: #D6001C;
+    }
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+button, input, a, textarea {
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+
+    &:focus, &:active {
+        outline: none
+    }
+}
+
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    &::selection {
+        color: #fff;
+        background-color: #D6001C;
+    }
+}
+
+span, div, button {
+    &::selection {
+        color: #fff;
+        background-color: #D6001C;
+    }
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+    &::selection {
+        color: #fff;
+        background-color: #D6001C;
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    // image-rendering: -webkit-optimize-contrast;
+}
+
+ul, ol {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    &::selection {
+        color: #fff;
+        background-color: #D6001C;
+    }
+    li {
+        margin: 0;
+        padding: 0;
+        // list-style: none;
+    }
+}
+
+.main {
+    min-height: 74vh;
+    padding-top: 9rem;
+
+    &_opening {
+        padding-top: 10.2rem;
+    }
+}
+
+.container {
+    width: 182rem;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    &_pages {
+        font-size: 1.8rem;
+        padding-top: 11rem;
+        padding-bottom: 11rem;
+    }
+
+    &_sm {
+        width: 163rem;
+    }
+}
+
+.mobile {
+    display: none !important;
+}
+
+.o-hidden {
+    overflow: hidden;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.politics {
+    h2 {
+        font-size: larger;
+        margin: 20px 0 40px;
+    }
+    p, ul, li {
+        margin-bottom: 20px;
+    }
+
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+:focus {
+    outline-style: none;
+    outline-width: 0 !important;
+    outline-color: none !important;
+}
+
+.section {
+    &_text-block {
+        padding: 5rem 0;
+        background-color: $background-gray;
+    }
+    &_model-config {
+        background-color: $background-gray;
+    }
+
+    &_about {
+        padding-top: 15rem;
+        padding-bottom: 12rem;
+    }
+
+    &_stock {
+        padding: 6rem;
+        background-color: $background-gray;
+    }
+    &_service-form {
+        padding: 10rem 0 12rem;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    html {
+        font-size: 100 / 320 * 5vw;
+        -webkit-text-size-adjust: none;
+    }
+
+    body {
+        -webkit-text-size-adjust: none;
+    }
+
+    .main {
+        padding-top: 21rem;
+
+        &_opening {
+            padding-top: 14.2rem;
+        }
+    }
+
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+        &-pages {
+            padding-top: 11rem;
+            padding-bottom: 11rem;
+        }
+    }
+
+    .desktop {
+        display: none !important;
+    }
+
+    .mobile {
+        display: block !important;
+    }
+
+    .section {
+        &_text-block {
+            padding: 2.5rem 0;
+        }
+        &_model-config {
+            padding-top: 1rem;
+            padding-bottom: 5rem;
+        }
+
+        &_about {
+            padding-top: 7.5rem;
+            padding-bottom: 7rem;
+        }
+
+        &_stock {
+            padding: 5rem 2rem;
+        }
+        &_service-form {
+            padding: 5.5rem 0 9rem;
+        }
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    border: 0;
+
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+}

@@ -1,0 +1,121 @@
+<div class="popup" id="popup">
+    <div class="popup-wrap">
+        <div class="popup__overlay" data-close-modal></div>
+        <div class="popup-content">
+            <div class="popup-close js-popup-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#969696" stroke-linecap="square" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#969696" stroke-linecap="square" stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+            <form method="post" class="popup-form form js-ajax-form">
+                <div class="popup-form__inner">
+                    <div class="popup-heading">
+                        <h2 class="popup-title title title_h2" data-text-item="modal-title">
+                            Заказать звонок
+                        </h2>
+                        <div class="popup-subtitle" data-text-item="modal-subtitle">
+                            Оставьте свой телефон, мы свяжемся с Вами в течение нескольких минут
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="type" value="form">
+                    <input type="hidden" name="form_key" value="callback">
+                    <input type="hidden" name="form_name" value="Заказать звонок">
+
+                    <div class="form-content">
+
+                        <label class="label">
+                            <input name="phone" type="text" placeholder="+7 (___) ___-__-__" class="form-phone js-form-phone required">
+                        </label>
+
+                        <button class="form__button button" type="submit"
+                                data-text-item="callback-button5">Отправить
+                        </button>
+                    </div>
+                    <div class="form__privacy" data-text-item="modal-privacy">
+                        Нажимая кнопку «Отправить», я даю согласие на <a href="#" target="_blank" rel="noopener">обработку персональных данных</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="popup popup_registration" id="popup-registration">
+    <div class="popup-wrap">
+        <div class="popup__overlay" data-close-modal></div>
+        <div class="popup-content">
+            <div class="popup-close js-popup-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#969696" stroke-linecap="square" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#969696" stroke-linecap="square" stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+            <form method="post" class="popup-form form js-ajax-form form-opening">
+                <div class="popup-form__inner">
+                    <div class="popup-heading">
+                        <h2 class="popup-title title title_h2" data-text-item="modal-title">
+                            Регистрация для СМИ
+                        </h2>
+                    </div>
+
+                    <input type="hidden" name="type" value="form">
+                    <input type="hidden" name="form_key" value="registration">
+                    <input type="hidden" name="form_name" value="Регистрация для СМИ">
+
+                    <div class="form-content">
+
+                        <label class="label form-opening__label">
+                            <input name="name" type="text" placeholder="Имя"
+                                   class="form-opening__input required">
+                        </label>
+                        <label class="label form-opening__label form-opening__label_phone">
+                            <input name="phone" type="text" placeholder="+7 000 000 00 00" class="form-opening__input js-form-phone required">
+                        </label>
+                        <button class="form-opening__button button" type="submit">Записаться</button>
+
+                    </div>
+                    <div class="form-opening__privacy" data-text-item="modal-privacy">
+                        Нажав кнопку "Записаться" я даю согласие на <a href="/privacy" target="_blank"
+                        rel="noopener">обработку моих персональных данных</a> и получение рекламы. С условиями обработки персональных данных и получения рекламы, изложенными на сайте <span>(Согласие на обработку запроса и Согласие на дальнейшую коммуникацию)</span> - ознакомлен и согласен.
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="popup popup__sent" id="popup-sent">
+    <div class="popup-wrap">
+        <div class="popup__overlay" data-close-modal></div>
+        <div class="popup-content">
+            <div class="popup-close js-popup-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#969696" stroke-linecap="square" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#969696" stroke-linecap="square" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="form-thanks">
+                <div class="form-thanks__img">
+                    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="26" cy="26" r="25" fill="#34A853" fill-opacity="0.05" stroke="#34A853"/>
+                        <path d="M20.5833 36.8332H17.3333C16.7587 36.8332 16.2076 36.6049 15.8013 36.1986C15.3949 35.7922 15.1667 35.2411 15.1667 34.6665V27.0832C15.1667 26.5085 15.3949 25.9574 15.8013 25.5511C16.2076 25.1448 16.7587 24.9165 17.3333 24.9165H20.5833M28.1667 22.7498V18.4165C28.1667 17.5546 27.8242 16.7279 27.2148 16.1184C26.6053 15.5089 25.7786 15.1665 24.9167 15.1665L20.5833 24.9165V36.8332H32.8033C33.3258 36.8391 33.8329 36.6559 34.2311 36.3175C34.6292 35.9791 34.8916 35.5081 34.97 34.9915L36.465 25.2415C36.5121 24.931 36.4912 24.6139 36.4036 24.3123C36.316 24.0106 36.1639 23.7317 35.9578 23.4946C35.7517 23.2576 35.4966 23.0683 35.21 22.9397C34.9235 22.811 34.6124 22.7463 34.2983 22.7498H28.1667Z"
+                              stroke="#34A853" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="form-thanks__text">
+                    <div class="form-thanks__title" data-text-item="modal-thanks">отправлено</div>
+                    <div class="form-thanks__text" data-text-item="modal-thanks">
+                        Мы свяжемся с Вами <br> в ближайшее время
+                    </div>
+                    <button class="form-thanks__button button js-popup-close" type="button">
+                        Ok
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

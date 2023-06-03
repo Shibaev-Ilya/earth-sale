@@ -1,0 +1,152 @@
+@import "main-bx";
+
+.button {
+    color: $color_white;
+    background-color: $color_primary;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 100%;
+    transition: 0.4s;
+
+    &:hover {
+        background-color: $primary_hover;
+    }
+
+    &:focus {
+        background-color: $primary_visited;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 2.8rem;
+    }
+
+    &_header-callback {
+        background-color: transparent;
+        padding: 0 4.5rem 0 0;
+        font-size: inherit;
+        position: relative;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 1.7rem;
+            height: 1.7rem;
+            background-image: url(../img/icons/phone-white.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            position: absolute;
+            right: 1.8rem;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        &:hover {
+            background-color: transparent;
+        }
+
+        &:focus {
+            background-color: transparent;
+        }
+    }
+
+    &_arrow {
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 100%;
+        position: relative;
+        padding: 3rem 9rem 3rem 5rem;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 4.4rem;
+            height: 3.3rem;
+            background-image: url(../img/icons/arrow_right-w.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            position: absolute;
+            right: 1.8rem;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+
+    &_test-drive {
+        position: relative;
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 100%;
+        padding: 2.4rem 3.2rem 2.4rem 6.8rem;
+        min-width: 26rem;
+        margin-left: 1.6rem;
+
+        background-color: transparent;
+        color: $color_dark;
+        border: 1px solid $color_dark;
+
+        @media (max-width: 768px) {
+            margin-left: 0;
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            background-image: url(../img/icons/wheel.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            position: absolute;
+            left: 1.8rem;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        &:hover {
+            background-color: #ffffff;
+        }
+
+        &:focus {
+            background-color: transparent;
+        }
+
+    }
+
+    &_red {
+        border: 1px solid $color_primary;
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 100%;
+        padding: 2.4rem 3.2rem;
+        min-width: 26rem;
+    }
+
+    &_show-more {
+        background-color: transparent;
+        padding: 2rem 3.2rem;
+        color: #333333;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 100%;
+        border: 1px solid #333333;
+
+        @media (max-width: 768px) {
+            padding: 2.7rem 5.2rem;
+        }
+
+        &:hover {
+            background-color: transparent;
+            box-shadow: 0 1rem 2rem rgba(0,0,0,0.1);
+        }
+
+        &:focus {
+            background-color: transparent;
+        }
+    }
+}
