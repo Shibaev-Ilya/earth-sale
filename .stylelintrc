@@ -4,7 +4,7 @@
         "stylelint-order",
         "stylelint-selector-bem-pattern"
     ],
-    "ignoreFiles" : [ "./src/styles/vendor/import/_smart-grid.scss" ],
+    "ignoreFiles" : [ "" ],
     "rules": {
         "indentation": 4,
         "plugin/selector-bem-pattern": [

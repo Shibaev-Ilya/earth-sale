@@ -69,8 +69,7 @@
     },
     "dependencies": {
         "gulp-babel": "^8.0.0-beta.2",
-        "gulp-newer": "^1.4.0",
-        "smart-grid": "^2.1.2"
+        "gulp-newer": "^1.4.0"
     },
     "lint-staged": {
         "!(_*).scss": [

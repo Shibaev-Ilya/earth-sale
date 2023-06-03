@@ -1,5 +1,5 @@
 # Сборка проекта
-Для сборки файлов в папку dist используется команда gulp prod --production, для импорта авто из фида надо запустить /_import/import.php
+Для продакшн сборки файлов в папку dist используется команда gulp prod --production
 
 # gulp-scss-starter
 
@@ -9,21 +9,8 @@
 * используется препроцессор [SCSS](https://sass-lang.com/)
 * используется транспайлер [Babel](https://babeljs.io/) для поддержки современного JavaScript (ES6) в браузерах
 * используется [Webpack](https://webpack.js.org/) для сборки JavaScript-модулей
-* используется CSS-сетка [smart-grid](https://github.com/dmitry-lavrik/smart-grid) на основе Bootstrap для быстрой адаптивной вёрстки
 * используется жёсткий кодгайд
 * используется проверка кода на ошибки перед коммитом
-
-## :hammer_and_wrench: Установка
-* установите [NodeJS](https://nodejs.org/en/) (если требуется) и [Yarn](https://yarnpkg.com/en/docs/install)
-* скачайте сборку с помощью [Git](https://git-scm.com/downloads)
-* установите ```gulp``` глобально: ```yarn global add gulp-cli```
-* установите ```bem-tools-core``` глобально: ```yarn global add bem-tools-core```
-* перейдите в скачанную папку со сборкой: ```cd gulp-scss-starter```
-* скачайте необходимые зависимости: ```yarn```
-* чтобы начать работу, введите команду: ```yarn run dev``` (режим разработки)
-* чтобы собрать проект, введите команду ```yarn run build``` (режим сборки)
-
-Если вы всё сделали правильно, у вас должен открыться браузер с локальным сервером.
 
 ## :open_file_folder: Файловая структура
 
@@ -76,24 +63,6 @@ gulp-scss-starter
 * Папка ```gulp-tasks``` - папка с Gulp-тасками
 * Папка ```.bem``` - шаблоны автоматического создания блоков
 
-## :keyboard: Команды
-* ```yarn run lint:styles``` - проверить SCSS-файлы. Для VSCode необходимо установить [плагин](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint). Для WebStorm
-или PHPStorm необходимо включить Stylelint в ```Languages & Frameworks - Style Sheets - Stylelint``` (ошибки будут исправлены автоматически при сохранении файла)
-* ```yarn run lint:styles --fix``` - исправить ошибки в SCSS-файлах
-* ```yarn run lint:scripts``` - проверить JS-файлы
-* ```yarn run lint:scripts --fix``` - исправить ошибки в JS-файлах
-* ```yarn run dev``` - запуск сервера для разработки проекта
-* ```yarn run build``` - собрать проект с оптимизацией без запуска сервера
-* ```yarn run build:views``` - собрать HTML-файлы
-* ```yarn run build:styles``` - скомпилировать SCSS-файлы
-* ```yarn run build:scripts``` - собрать JS-файлы
-* ```yarn run build:images``` - собрать изображения
-* ```yarn run build:webp``` - сконвертировать изображения в формат ```.webp```
-* ```yarn run build:sprites```- собрать спрайты
-* ```yarn run build:fonts``` - собрать шрифты
-* ```yarn run build:favicons``` - собрать фавиконки
-* ```yarn run build:gzip``` - собрать конфигурацию Apache
-
 ## :bulb: Рекомендации по использованию
 ### Компонентный подход к разработке сайтов
 * каждый БЭМ-блок имеет свою папку внутри ```src/blocks/modules```
@@ -138,14 +107,3 @@ blocks
     ```javascript
     <link href="style.css" rel="stylesheet">
     ```
-
-## :hash: CSS-сетка smart-grid
-В сборщик включена CSS-сетка [smart-grid](https://github.com/dmitry-lavrik/smart-grid) от [Дмитрия Лаврика](https://dmitrylavrik.ru/). Она позволяет избавиться от
-лишних классов в разметке за счёт использования примесей в SCSS и ускоряет адаптивную вёрстку. Конфигурация уже настроена в соответствии с сеткой [Bootstrap](https://getbootstrap.com/). Инструкция по использованию [здесь](https://grid4web.ru/basics).
-
- ```javascript
-@@include("../button/button.html", {
-text: "Получить предложение",
-type: "modal"
-})
- ```
