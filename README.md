@@ -15,7 +15,7 @@
 
 ## :hammer_and_wrench: Установка
 * установите [NodeJS](https://nodejs.org/en/) (если требуется) и [Yarn](https://yarnpkg.com/en/docs/install)
-* скачайте сборку с помощью [Git](https://git-scm.com/downloads): ```git@gitlab.4px.ru:4px/wiki-bitrix-storage.git```
+* скачайте сборку с помощью [Git](https://git-scm.com/downloads)
 * установите ```gulp``` глобально: ```yarn global add gulp-cli```
 * установите ```bem-tools-core``` глобально: ```yarn global add bem-tools-core```
 * перейдите в скачанную папку со сборкой: ```cd gulp-scss-starter```
