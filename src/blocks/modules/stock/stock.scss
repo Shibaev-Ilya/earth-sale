@@ -1,0 +1,12 @@
+@import "main-bx";
+
+.stock {
+    @include lg-block() {
+		
+		
+    }
+    @include md-block() {
+		
+		
+    }
+}

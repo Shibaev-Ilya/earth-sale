@@ -1,0 +1,49 @@
+@import "main-bx";
+
+.banner {
+  background-color: #014801;
+  //background-image: url("../img/banner/main-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: $color_white;
+  position: relative;
+
+  &__video {
+    width: 100%;
+    height: auto;
+    max-height: 60rem;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__wrap {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    height: 60rem;
+  }
+
+  &__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 13rem 0 10rem;
+    max-width: 130rem;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 6rem;
+    margin-bottom: 4rem;
+  }
+  &__subtitle {
+    text-align: center;
+    font-size: 3rem;
+    line-height: 150%;
+  }
+
+}

@@ -4,8 +4,71 @@
   position: fixed;
   z-index: 9;
   width: 100%;
-  background-color: #969696;
-  height: 100px;
+  background-color: $background-gray;
+  box-shadow: 0 1rem 0.8rem -0.5rem rgba(0, 0, 0, 0.1);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+  }
+
+  &__logo-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    max-width: 5rem;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__name {
+    text-transform: uppercase;
+    color: $primary_visited;
+    margin-left: 1.5rem;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    display: block;
+
+    +.header__link {
+      margin-left: 2rem;
+    }
+
+    &:hover {
+      border-bottom: 1px solid #000000;
+    }
+  }
+
+  &__phone {
+    display: flex;
+    align-items: center;
+    margin-left: 5rem;
+
+    span {
+      margin-left: 1rem;
+    }
+
+    &:hover {
+
+      span {
+        border-bottom: 1px solid #000000;
+      }
+    }
+
+  }
 
 }
 

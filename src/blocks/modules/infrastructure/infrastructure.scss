@@ -1,0 +1,36 @@
+@import "main-bx";
+
+.infrastructure {
+  padding: 8rem 0;
+
+  &__title {
+    font-size: 5rem;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 3rem;
+  }
+
+  &__text {
+    width: 50%;
+    padding-right: 3rem;
+  }
+
+  &__img {
+    width: 45%;
+
+    img  {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+}
