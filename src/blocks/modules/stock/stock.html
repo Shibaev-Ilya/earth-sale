@@ -1,0 +1,22 @@
+<section class="stock">
+    <div class="container">
+        <form class="js-stock-filter">
+            <div class="stock__form-inner">
+                <label class="stock__form-label">Марка<select class="js-filter" name="mark" data-filter="mark"></select></label>
+                <label class="stock__form-label">Модель<select class="js-filter" name="model" data-filter="model"></select></label>
+                <label class="stock__form-label">От<input class="js-filter js-price-min" type="number" name="price-min" placeholder="от" min="0" step="500000"></label>
+                <label class="stock__form-label">До<input class="js-filter js-price-max" type="number" name="price-max" placeholder="до" min="0" step="500000"></label>
+                <label class="stock__form-label">Все/Новые<input class="js-filter" type="checkbox" name="run" value="new" placeholder="Новый | минимальный пробег"></label>
+            </div>
+            <button type="button" class="button js-submit-filter">показать <span class="js-auto-counter"></span></button>
+            <button type="button" class="button js-reset-filter">
+                очистить фильтр
+            </button>
+        </form>
+        <hr>
+        <h3>Сток <span class="js-count"></span></h3>
+        <div class="stock__list js-stock-list">
+            <!--сток тут-->
+        </div>
+    </div>
+</section>
