@@ -57,12 +57,20 @@ const initStock = (settings) => {
         let _minPrice = 0;
         let _maxPrice = 100000000;
         let renderedItems = 0;
+        const dafaultFiltersValues = {
+            'mark' :  "all",
+            'model' :  "all",
+            'price-max' : "all",
+            'price-min' : "all",
+            'run' : true,
+        };
 
         //кнопка показать еще
         const showMoreButton = createElement('<button class="button">Показать ещё</button>');
         function onShowMoreButtonClick() {
             renderedItems = renderedItems + add;
-            const filteredStock = getFilteredStock(_initialStock);
+            const filtersValues = getFiltersValues();
+            const filteredStock = getFilteredStock(_initialStock, filtersValues);
             showStock(stockBlock, filteredStock)
         }
         showMoreButton.addEventListener('click', onShowMoreButtonClick);
@@ -76,7 +84,6 @@ const initStock = (settings) => {
 
         // инициализация стока
         function stockInit(data) {
-            //console.log(data);
 
             // получаем фильтры и выводим их
             const filtersData = getFiltersData(filters, data);
@@ -111,22 +118,38 @@ const initStock = (settings) => {
         }
 
         // прописываем фильтры
-        function setFiltersData(filters, filtersData) {
-            for (let filter in filtersData) {
-                if (filtersData.hasOwnProperty(filter)) {
-                    const currentFilterArr = Array.from(filtersData[filter]);
+        function setFiltersData(filters, filtersData, changedFilterName = '') {
 
-                    if (filter === 'price') {
-                        let sortedPrices = currentFilterArr.sort(sortPrice);
-                        _minPrice = sortedPrices[0];
-                        _maxPrice = sortedPrices[sortedPrices.length - 1];
-                    } else {
-                        $(`[data-filter="${filter}"]`).append(`<option value="all">Все</option>`);
-                        currentFilterArr.forEach(option => {
-                            $(`[data-filter="${filter}"]`).append(`<option value="${option}">${option}</option>`);
-                        })
+            if (!changedFilterName) {
+                for (let filter in filtersData) {
+                    if (filtersData.hasOwnProperty(filter)) {
+                        const currentFilterArr = Array.from(filtersData[filter]);
+
+                        if (filter === 'price') {
+                            let sortedPrices = currentFilterArr.sort(sortPrice);
+                            _minPrice = sortedPrices[0];
+                            _maxPrice = sortedPrices[sortedPrices.length - 1];
+                        } else {
+                            $(`[data-filter="${filter}"]`).empty();
+                            $(`[data-filter="${filter}"]`).append(`<option value="all">Все</option>`);
+                            currentFilterArr.forEach(option => {
+                                $(`[data-filter="${filter}"]`).append(`<option value="${option}">${option}</option>`);
+                            })
+                        }
                     }
                 }
+            } else {
+                if (changedFilterName === 'mark') {
+                    const modelFilterArr = Array.from(filtersData["model"]);
+
+                    $(`[data-filter="model"]`).empty();
+                    $(`[data-filter="model"]`).append(`<option value="all">Все</option>`);
+
+                    modelFilterArr.forEach(option => {
+                        $(`[data-filter="model"]`).append(`<option value="${option}">${option}</option>`);
+                    })
+                }
+
             }
 
         }
@@ -142,15 +165,20 @@ const initStock = (settings) => {
 
         // изменение фильтров
         function onFilterChange(evt) {
-            const filteredStock = getFilteredStock(_initialStock);
+            let filtersValues = getFiltersValues();
+
+            if (evt.target.name === 'mark') {
+                filtersValues['model'] = 'all';
+            }
+
+            const filteredStock = getFilteredStock(_initialStock, filtersValues);
+            const filtersData = getFiltersData(filters, filteredStock);
 
             setAmount(filteredStock, false);
 
-            // if (evt.target.name === 'run') {
-            //     console.log(!evt.target.checked);
-            // } else {
-            //     console.log(evt.target.value);
-            // }
+            if (evt.target.name === 'mark' || evt.target.name === 'model') {
+                setFiltersData(filters, filtersData, evt.target.name);
+            }
         }
 
         // получаем выбранные фильтры
@@ -191,8 +219,7 @@ const initStock = (settings) => {
         }
 
         // фильтрация стока
-        function getFilteredStock(data) {
-            const filtersValues = getFiltersValues();
+        function getFilteredStock(data, filtersValues) {
             return data.filter(el => {
                 return (
                     isSelectOk(el['mark'], filtersValues['mark']) &&
@@ -229,7 +256,8 @@ const initStock = (settings) => {
         };
 
         function onSubmitButtonClick() {
-            const filteredStock = getFilteredStock(_initialStock);
+            const filtersValues = getFiltersValues();
+            const filteredStock = getFilteredStock(_initialStock, filtersValues);
             stockBlock.empty();
             showStock(stockBlock, filteredStock);
         }
@@ -238,8 +266,12 @@ const initStock = (settings) => {
             filtersBlock.trigger("reset");
             stockBlock.empty();
             renderedItems = 0;
-            const filteredStock = getFilteredStock(_initialStock);
-            setAmount(0, true);
+
+            const filteredStock = getFilteredStock(_initialStock, dafaultFiltersValues);
+            const filtersData = getFiltersData(filters, filteredStock);
+
+            setAmount(filteredStock, false);
+            setFiltersData(filters, filtersData, '');
             showStock(stockBlock, filteredStock);
         }
 
